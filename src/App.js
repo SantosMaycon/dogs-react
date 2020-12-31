@@ -9,22 +9,25 @@ import LoginForm from './Components/Login/LoginForm'
 import LoginCreate from './Components/Login/LoginCreate'
 import LoginPasswordLost from './Components/Login/LoginPasswordLost'
 import LoginPasswordReset from './Components/Login/LoginPasswordReset'
+import { UserStorage } from './UserContext';
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+      <UserStorage>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} > 
-            <Route path="/" element={<LoginForm />} />
-            <Route path="/criar" element={<LoginCreate />} />
-            <Route path="/perdeu" element={<LoginPasswordLost />} />
-            <Route path="/resetar" element={<LoginPasswordReset />} />
-          </Route>
-        </Routes>
-        <Footer />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} > 
+              <Route path="/" element={<LoginForm />} />
+              <Route path="/criar" element={<LoginCreate />} />
+              <Route path="/perdeu" element={<LoginPasswordLost />} />
+              <Route path="/resetar" element={<LoginPasswordReset />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </div>
   )
