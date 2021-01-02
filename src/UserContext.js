@@ -18,6 +18,7 @@ export const UserStorage = ({ children }) => {
     const json = await response.json();
     setData(json)
     setLoading(true)
+    setLogin(true)
     console.log(json)
   }
 
@@ -66,6 +67,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false)
         }
+      } else {
+        setLogin(false)
       }
     }
     autoLogin()
