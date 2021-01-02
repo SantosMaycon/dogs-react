@@ -8,16 +8,10 @@ import Input from '../Forms/Input'
 const LoginForm = () => {
   const username = useForm()
   const password = useForm()
-  const { userLogin, getUser, data } = React.useContext(UserContext)
-
-  React.useEffect(() => {
-    const token = window.localStorage.getItem('token')
-    if(token) getUser(token);
-  }, [])
+  const { userLogin, error, loading } = React.useContext(UserContext)
 
   async function handleSubmit(event) {
     event.preventDefault();
-
     if ( username.validate() && password.validate() ){
       userLogin(username.value, password.value)
     }
@@ -28,8 +22,9 @@ const LoginForm = () => {
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="Login" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
+        <Input label="Senha" type="password" name="password" autocomplete="on" {...password} />
+        { loading ? <Button disabled >Carregando...</Button> : <Button>Entrar</Button>}
+        {error && <p>{error}</p>}
       </form>
       <Link to="criar">Cadastrar</Link>
     </section>

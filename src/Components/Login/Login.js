@@ -1,12 +1,20 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
+import { UserContext } from '../../UserContext'
 
 const Login = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  )
+  const { data } = React.useContext(UserContext)
+
+  if(data){
+    return <Navigate to="/conta" />
+  } 
+  else{
+    return (
+      <div>
+        <Outlet />
+      </div>
+    )
+  }
 }
 
 export default Login
