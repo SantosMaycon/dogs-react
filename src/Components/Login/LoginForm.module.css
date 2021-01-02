@@ -1,0 +1,39 @@
+.perdeu {
+  display: inline-block;
+  color: rgb(102, 102, 102);
+  padding: 0.5rem 0px;
+  line-height: 1;
+}
+
+.perdeu::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 99%;
+  margin: 0 auto;
+  background: currentColor;
+}
+
+.cadastro {
+  margin-top: 4rem;
+}
+
+.cadastro p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.subtitle::after {
+  content: '';
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}

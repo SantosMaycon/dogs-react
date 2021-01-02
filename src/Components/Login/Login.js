@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { UserContext } from '../../UserContext'
+import styles from './Login.module.css'
 
 const Login = () => {
   const { data } = React.useContext(UserContext)
@@ -10,9 +11,11 @@ const Login = () => {
   } 
   else{
     return (
-      <div>
-        <Outlet />
-      </div>
+      <section className={styles.login}>
+        <div className={styles.form}>
+          <Outlet />
+        </div>
+      </section>
     )
   }
 }
