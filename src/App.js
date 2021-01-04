@@ -12,6 +12,9 @@ import LoginPasswordReset from './Components/Login/LoginPasswordReset'
 import { UserStorage } from './UserContext';
 import User from './Components/User/User'
 import ProtectedRoute from './Components/Helper/ProtectedRoute'
+import Feed from './Components/Feed/Feed'
+import UserPhotoPost from './Components/User/UserPhotoPost'
+import UserStats from './Components/User/UserStats'
 
 const App = () => {
   return (
@@ -27,7 +30,11 @@ const App = () => {
               <Route path="/perdeu" element={<LoginPasswordLost />} />
               <Route path="/resetar" element={<LoginPasswordReset />} />
             </Route>
-            <ProtectedRoute path="conta" element={<User />} />
+            <ProtectedRoute path="/conta" element={<User />} >
+              <Route path="/" element={<Feed />} />
+              <Route path="/postar" element={<UserPhotoPost />} />
+              <Route path="/estatisticas" element={<UserStats />} />
+            </ProtectedRoute>
           </Routes>
           <Footer />
         </UserStorage>
