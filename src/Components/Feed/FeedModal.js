@@ -6,7 +6,7 @@ import Loading from '../Helper/Loading'
 import PhotoContent from '../Photo/PhotoContent'
 import styles from './FeedModal.module.css'
 
-const FeedModal = ({photo}) => {
+const FeedModal = ({photo, setModalPhoto}) => {
   const { data, loading, error, request } = useFetch()
 
   React.useEffect(() => {
@@ -16,8 +16,14 @@ const FeedModal = ({photo}) => {
     } fetchPhotos()
   },[photo, request])
 
+
+  function closeModal(event) {
+    if(event.target === event.currentTarget)
+      setModalPhoto(null)
+  }
+
   return (
-    <div className={styles.modal}>
+    <div className={styles.modal} onClick={closeModal}>
       { error && <Error error={error} /> }
       { loading && <Loading /> }
       { data && <PhotoContent data={data} /> }
