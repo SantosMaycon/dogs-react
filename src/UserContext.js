@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from './api';
 
-
 export const UserContext= React.createContext();
 
 export const UserStorage = ({ children }) => {
@@ -19,7 +18,6 @@ export const UserStorage = ({ children }) => {
     setData(json)
     setLoading(true)
     setLogin(true)
-    console.log(json)
   }
 
   async function userLogin(username, password) {
@@ -31,7 +29,6 @@ export const UserStorage = ({ children }) => {
       if(!response.ok) throw new Error(`Error: ${response.statusText} / erro interno no servidor`)        
       const json = await response.json();
       window.localStorage.setItem('token', json.token);
-      console.log(json);
       await getUser(json.token);
       setLogin(true)
       navagate('/conta')
