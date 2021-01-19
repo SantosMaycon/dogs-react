@@ -6,7 +6,7 @@ const Image = ({alt, ...props}) => {
   
   function handleLoad({target}) {
     setSkeleton(false);
-    console.log(target.style.opacity = 1)
+    target.style.opacity = 1
   }
 
   return (
