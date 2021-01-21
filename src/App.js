@@ -9,18 +9,14 @@ import LoginForm from './Components/Login/LoginForm'
 import LoginCreate from './Components/Login/LoginCreate'
 import LoginPasswordLost from './Components/Login/LoginPasswordLost'
 import LoginPasswordReset from './Components/Login/LoginPasswordReset'
-import { UserContext, UserStorage } from './UserContext';
+import { UserStorage } from './UserContext';
 import User from './Components/User/User'
 import ProtectedRoute from './Components/Helper/ProtectedRoute'
-import Feed from './Components/Feed/Feed'
-import UserPhotoPost from './Components/User/UserPhotoPost'
-import UserStats from './Components/User/UserStats'
+// import Feed from './Components/Feed/Feed'
+// import UserPhotoPost from './Components/User/UserPhotoPost'
+// import UserStats from './Components/User/UserStats'
 
 const App = () => {
-  const { data } = React.useContext(UserContext);
-  console.log(data)
-
-
   return (
     <div>
       <BrowserRouter>
@@ -34,11 +30,7 @@ const App = () => {
               <Route path="/perdeu" element={<LoginPasswordLost />} />
               <Route path="/resetar" element={<LoginPasswordReset />} />
             </Route>
-            <ProtectedRoute path="/conta" element={<User />} >
-              <Route path="/" element={<Feed user={data.id} />} />
-              <Route path="/postar" element={<UserPhotoPost />} />
-              <Route path="/estatisticas" element={<UserStats />} />
-            </ProtectedRoute>
+            <ProtectedRoute path="/conta/*" element={<User />} />
           </Routes>
           <Footer />
         </UserStorage>

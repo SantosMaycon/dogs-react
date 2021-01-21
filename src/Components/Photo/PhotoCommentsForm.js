@@ -7,7 +7,7 @@ import styles from './PhotoCommentsForm.module.css'
 
 const PhotoCommentsForm = ({id, setComments}) => {
   const [comment, setComment] = React.useState('')
-  const { request, error, loading } = useFetch()
+  const { request, error } = useFetch()
 
   async function handleSubmit(event) {
     event.preventDefault()
