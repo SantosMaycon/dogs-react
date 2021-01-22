@@ -32,7 +32,7 @@ function PhotoContent({ data, single }) {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} single={true} />
+      <PhotoComments id={photo.id} comments={comments} single={single} />
     </div>
   )
 }
