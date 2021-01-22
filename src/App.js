@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Home from './Components/Home'
+import Photo from './Components/Photo/Photo'
 import Login from './Components/Login/Login'
 import LoginForm from './Components/Login/LoginForm'
 import LoginCreate from './Components/Login/LoginCreate'
@@ -12,9 +13,6 @@ import LoginPasswordReset from './Components/Login/LoginPasswordReset'
 import { UserStorage } from './UserContext';
 import User from './Components/User/User'
 import ProtectedRoute from './Components/Helper/ProtectedRoute'
-// import Feed from './Components/Feed/Feed'
-// import UserPhotoPost from './Components/User/UserPhotoPost'
-// import UserStats from './Components/User/UserStats'
 
 const App = () => {
   return (
@@ -24,6 +22,7 @@ const App = () => {
         <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="foto/:id" element={<Photo />} />
             <Route path="/login" element={<Login />} > 
               <Route path="/" element={<LoginForm />} />
               <Route path="/criar" element={<LoginCreate />} />
