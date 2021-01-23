@@ -5,6 +5,7 @@ import useForm from '../../Hooks/useForm'
 import Button from '../Forms/Button'
 import Input from '../Forms/Input'
 import Error from '../Helper/Error'
+import Head from '../Helper/Head'
 import styles from './UserPhotoPost.module.css'
 
 const UserPhotoPost = () => {
@@ -38,6 +39,7 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animaLeft`}>
+      <Head title="Poste sua foto" />
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="name" {...nome}/>
         <Input label="Peso" type="number" name="peso" {...peso}/>
