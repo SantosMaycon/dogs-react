@@ -14,6 +14,7 @@ import { UserStorage } from './UserContext';
 import User from './Components/User/User'
 import ProtectedRoute from './Components/Helper/ProtectedRoute'
 import UserProfile from './Components/User/UserProfile'
+import NotFound from './Components/NotFound'
 
 const App = () => {
   return (
@@ -30,8 +31,10 @@ const App = () => {
               <Route path="/criar" element={<LoginCreate />} />
               <Route path="/perdeu" element={<LoginPasswordLost />} />
               <Route path="/resetar" element={<LoginPasswordReset />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
             <ProtectedRoute path="/conta/*" element={<User />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>
