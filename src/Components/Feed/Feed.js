@@ -15,7 +15,6 @@ const Feed = ({user}) => {
         const height = document.body.offsetHeight - window.innerHeight
         if (scroll > height * 0.75 && !wait) {
           wait = true
-          console.log("Inifite status:", infinite)
           setPages((pages) => [...pages, pages.length + 1])
           setTimeout(() => {
             wait = false

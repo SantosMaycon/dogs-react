@@ -6,16 +6,16 @@
 }
 
 .login::before {
-  content: '';
+  content: "";
   display: block;
-  background: url('../../Assets/login.jpg') no-repeat center center;
+  background: url("../../Assets/login.jpg") no-repeat center center;
   background-size: cover;
 }
 
 .form {
   max-width: 30rem;
   padding: 1rem;
-  margin-top: 17vh;
+  margin-top: 20vh;
 }
 
 @media (max-width: 40rem) {

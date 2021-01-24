@@ -29,10 +29,7 @@ const LoginCreate = () => {
     if ( username.validate() && email.validate() && password.validate()) {
       const { url, options } = USER_POST(body)
 
-      const { response, json } = await request(url, options)
-      //const json = await response.json()
-      console.log(response)
-      console.log(json)
+      const { response } = await request(url, options)
       if (response.ok) await userLogin(username.value, password.value)
     }
   }

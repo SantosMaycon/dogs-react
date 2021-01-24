@@ -28,7 +28,7 @@ const LoginForm = () => {
         <Input label="Login" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" autocomplete="on" {...password} />
         { loading ? <Button disabled >Carregando...</Button> : <Button>Entrar</Button>}
-        <Error error={error} />
+        <Error error={error && 'Dados incorretos.'} />
       </form>
       <Link className={styles.perdeu} to="perdeu">Perdeu a Senha?</Link>
       <div className={styles.cadastro}>

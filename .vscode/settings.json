@@ -4,6 +4,6 @@
     ".gitignore": true,
     "package.json": false,
     "package-lock.json": false,
-    "public": true
+    "public": false
   }
 }

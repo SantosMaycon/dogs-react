@@ -10,8 +10,6 @@ function PhotoContent({ data, single }) {
   const user = React.useContext(UserContext)
   const { photo, comments } = data
 
-  console.log(user)
-
   return (
     <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}> 
