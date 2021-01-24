@@ -3,7 +3,7 @@
     "node_modules": true,
     ".gitignore": true,
     "package.json": false,
-    "package-lock.json": true,
+    "package-lock.json": false,
     "public": true
   }
 }
